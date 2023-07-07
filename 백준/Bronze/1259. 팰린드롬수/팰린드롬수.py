@@ -1,7 +1,4 @@
-#1259 팰린드롬
-#1259 팰린드롬
-my_list = []
-pringLst = []
+myLst = [] # 다 끝나고 출력하기 위해서 미리 빈 리스트
 while True:
     nums = list(input())
     if nums == ['0']:
@@ -9,16 +6,18 @@ while True:
     else:
         while True:
             if len(nums) <= 1:
-                pringLst.append('yes')
+                myLst.append('yes')
                 break
             if nums[0] == nums[-1]:
                 del nums[0]
                 del nums[-1]
             else:
-                pringLst.append('no')
+                myLst.append('no')
                 break
-for a in pringLst:
+for a in myLst:
     print(a)
+
+
 
 
 
