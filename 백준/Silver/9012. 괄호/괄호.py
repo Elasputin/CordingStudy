@@ -1,19 +1,21 @@
-import sys
-N = int(sys.stdin.readline().rstrip())
-for i in range(N):
-    stack = []
-    gwalho = sys.stdin.readline().rstrip() #  for문안에서 문자열 입력받기
-    for g in gwalho: # for each문으로 접근
-        if g == "(":  # 만약 각 글자가 (라면 내 스택에 append
-            stack.append(g)
-        else:  # 그렇지 않다면 stack의 여부에 따라 달라짐
-            if stack:
-                stack.pop()
+#9012 queue
+# 큐는 선입 선출
+import sys  # 더 빠른 접근을 위한 sys 사용
+num = int(sys.stdin.readline().rstrip())
+for i in range(num):
+    my_queue = []
+    word = sys.stdin.readline().rstrip()
+    for g in word:
+        if g == '(':  # 괄호를 여는 기호일 경우 큐에 넣는다.
+            my_queue.append(g)
+        else:
+            if my_queue:  # my_queue가 존재할 경우
+                my_queue.pop()  # 마지막에 있는 (를 지우기
             else:
-                print("NO")
+                print('NO')
                 break
     else:
-        if not stack:
-            print("YES")
+        if(len(my_queue)) != 0:
+            print('NO')
         else:
-            print("NO")
+            print('YES')
